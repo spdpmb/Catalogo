@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Digital PMB — Seção de Móveis</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <img src="imagens/logo-pmb.png" alt="PMB" onerror="this.style.display='none'">
+    </div>
+    <div class="titulo">
+      <div class="titulo-badge">EXÉRCITO BRASILEIRO</div>
+      <h1>PREFEITURA MILITAR DE BRASÍLIA</h1>
+      <h2>SEÇÃO DE MÓVEIS</h2>
+      <p>Catálogo Digital de Materiais Homologados</p>
+    </div>
+    <div class="logo-area">
+      <img src="imagens/intendencia.png" alt="Intendência" onerror="this.style.display='none'">
+    </div>
+  </header>
+
+  <!-- DASHBOARD -->
+  <section class="dashboard">
+    <div class="card-info">
+      <i class="fas fa-box-open"></i>
+      <h3 id="totalItens">0</h3>
+      <span>Total de Itens</span>
+    </div>
+    <div class="card-info">
+      <i class="fas fa-tags"></i>
+      <h3 id="totalCategorias">0</h3>
+      <span>Categorias</span>
+    </div>
+    <div class="card-info">
+      <i class="fas fa-search"></i>
+      <h3 id="itensEncontrados">0</h3>
+      <span>Encontrados</span>
+    </div>
+    <div class="card-info">
+      <i class="fas fa-file-alt"></i>
+      <h3 id="paginaAtualInfo">1</h3>
+      <span>Página Atual</span>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filtros">
+    <div class="filtro-grupo pesquisa-wrap">
+      <i class="fas fa-search icone-pesquisa"></i>
+      <input type="text" id="pesquisa" placeholder="Pesquisar por item, categoria ou descrição...">
+      <button id="limparPesquisa" title="Limpar pesquisa"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="filtro-grupo">
+      <select id="ordenacao">
+        <option value="item">Ordenar por Nº Item</option>
+        <option value="categoria">Ordenar por Categoria</option>
+        <option value="descricao">Ordenar por Descrição</option>
+      </select>
+    </div>
+    <button id="darkMode" title="Alternar modo escuro">
+      <i class="fas fa-moon"></i>
+      <span>Modo Escuro</span>
+    </button>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="categorias-wrap">
+    <div id="categorias"></div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <main id="catalogo"></main>
+
+  <!-- PAGINAÇÃO -->
+  <section id="paginacao"></section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="fechar" aria-label="Fechar">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-imagem-wrap">
+          <img id="modalImagem" src="" alt="Imagem do item">
+        </div>
+        <div class="modal-info">
+          <div class="modal-badge" id="modalCategoriaBadge"></div>
+          <h2 id="modalTitulo"></h2>
+          <div class="modal-sep"></div>
+          <div class="modal-desc-label">Descrição</div>
+          <p id="modalDescricao"></p>
+          <div class="modal-num" id="modalNumero"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">PMB</div>
+      <div class="footer-text">
+        <span>Sistema desenvolvido por <strong>Cb Pacheco</strong></span>
+        <span>Praça em <strong>01/03/2019</strong></span>
+        <span>Catálogo Digital de Materiais Homologados &copy; 2025</span>
+      </div>
+    </div>
+  </footer>
+  <script src="dados/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
