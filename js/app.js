@@ -3,7 +3,7 @@ const ITENS_POR_PAGINA = 5;
 // O array "dados" vem do arquivo dados.js
 let filtrados = [...dados];
 
-let paginaAtual = 1;
+let paginaAtual = 
 let categoriaAtual = "Todos";
 
 
