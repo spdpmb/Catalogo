@@ -1,4 +1,4 @@
-/* ============================================================
+/* ===========================================================
    CATÁLOGO DIGITAL PMB — app.js
    Cb Pacheco / Praça 01/03/2019
    Compatível com HTML v2 (dados via dados.js global)
