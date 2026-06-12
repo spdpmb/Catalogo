@@ -181,27 +181,23 @@ renderizar();
 
 }
 
+// ABRIR — troque o .style.display por classList
 function abrirModal(numero){
+  const item = dados.find(i => i.item == numero);
+  if(!item) return;
 
-const item =
-dados.find(i=>i.item===numero);
+  document.getElementById("modalImagem").src = `imagens/${item.imagem}`;
+  document.getElementById("modalTitulo").innerText = `Item ${item.item}`;
+  document.getElementById("modalCategoria").innerText = item.categoria;
+  document.getElementById("modalDescricao").innerText = item.descricao;
 
-document.getElementById("modalImagem")
-.src=`imagens/${item.imagem}`;
-
-document.getElementById("modalTitulo")
-.innerText=`Item ${item.item}`;
-
-document.getElementById("modalCategoria")
-.innerText=item.categoria;
-
-document.getElementById("modalDescricao")
-.innerText=item.descricao;
-
-document.getElementById("modal")
-.style.display="block";
-
+  document.getElementById("modal").classList.add("aberto"); // ← aqui
 }
+
+// FECHAR — mesma coisa
+document.querySelector(".fechar").onclick = () => {
+  document.getElementById("modal").classList.remove("aberto"); // ← aqui
+};
 
 document.querySelector(".fechar")
 .onclick=()=>{
